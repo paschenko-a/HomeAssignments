@@ -5,3 +5,45 @@
 */
 
 #include "calculate.hpp"
+
+void myproject::calculateValue(std::string inputString) {
+
+    double* stack = new double[100];
+    double* i = stack;
+
+    std::string symbol;
+    std::stringstream stream(inputString);
+    std::string operators = "+-*/";
+
+    while (stream >> symbol) {
+        if (operators.find(symbol) != std::string::npos){
+            if (symbol == "+") {
+                double firstElement = *i;
+                i--; double secondElement = *i;
+                *i = firstElement + secondElement;
+            }
+            if (symbol == "-") {
+                double firstElement = *i;
+                i--; double secondElement = *i;
+                *i = secondElement - firstElement;
+            }
+            if (symbol == "*") {
+                double firstElement = *i;
+                i--; double secondElement = *i;
+                *i = firstElement * secondElement;
+            }
+            if (symbol == "/") {
+                double firstElement = *i;
+                i--; double secondElement = *i;
+                *i = secondElement / firstElement;
+            }
+
+        } else {
+            i++; int digit = stol(symbol);
+            *i = digit;
+        }
+    }
+    std::cout << *i << "\n";
+    delete[] stack;
+}
+

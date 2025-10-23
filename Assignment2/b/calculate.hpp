@@ -6,4 +6,12 @@
 #ifndef CALCULATE_HPP
 #define CALCULATE_HPP
 
+#include <iostream>
+#include <string>
+#include <sstream>
+
+namespace myproject {
+    void calculateValue(std::string inputString);
+}
+
 #endif
