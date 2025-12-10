@@ -39,7 +39,7 @@ void myproject::calculateValue(std::string inputString) {
             }
 
         } else {
-            i++; int digit = stol(symbol);
+            i++; double digit = stod(symbol);
             *i = digit;
         }
     }

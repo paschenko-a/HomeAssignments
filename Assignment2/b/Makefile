@@ -2,7 +2,7 @@ PROJECT = calculate
 CXX = g++
 CXXFLAGS = -Wall -Wextra
 SRC = calculate.cpp main.cpp
-OBJ = $(SRC: .cpp=.o)
+OBJ = $(SRC:.cpp=.o)
 
 .PHONY: all clean
 
@@ -15,4 +15,4 @@ $(PROJECT): $(OBJ)
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 clean:
-	rm −f $(OBJ) $(PROJECT)
+	rm -f $(OBJ) $(PROJECT)
