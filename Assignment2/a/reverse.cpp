@@ -26,5 +26,7 @@ void myproject::textReverse(std::string pathToFile) {
     outputFile.write(dataArray, fileSize);
     outputFile.close();
 
+    delete[] dataArray;
+
     std::cout << "The data is written to the file 'output_file.txt'" << std::endl;
 }
