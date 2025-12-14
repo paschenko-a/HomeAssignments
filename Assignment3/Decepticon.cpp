@@ -1,3 +1,9 @@
+/*
+* Pashchenko Alexey
+* st141278@student.spbu.ru
+* My project number three
+*/
+
 #include "Decepticon.h"
 
 Decepticon::Decepticon(const std::string& name, int age, const std::string& rank, 

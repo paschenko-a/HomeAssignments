@@ -1,3 +1,9 @@
+/*
+* Pashchenko Alexey
+* st141278@student.spbu.ru
+* My project number three
+*/
+
 #ifndef AUTOBOT_H
 #define AUTOBOT_H
 

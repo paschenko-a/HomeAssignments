@@ -1,3 +1,9 @@
+/*
+* Pashchenko Alexey
+* st141278@student.spbu.ru
+* My project number three
+*/
+
 #ifndef TRANSFORMER_H
 #define TRANSFORMER_H
 

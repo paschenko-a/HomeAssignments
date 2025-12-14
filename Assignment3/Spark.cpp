@@ -1,3 +1,9 @@
+/*
+* Pashchenko Alexey
+* st141278@student.spbu.ru
+* My project number three
+*/
+
 #include "Spark.h"
 
 Spark::Spark(int energyLevel, bool isActive, float frequency) {
