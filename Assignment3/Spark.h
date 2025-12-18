@@ -7,19 +7,20 @@
 #ifndef SPARK_H
 #define SPARK_H
 
-class Spark {
+class Spark
+{
 public:
     Spark(int energyLevel, bool isActive, float frequency);
     ~Spark();
-    
+
     int getEnergyLevel();
     bool getIsActive();
     float getFrequency();
-    
+
     void setEnergyLevel(int level);
     void setIsActive(bool active);
     void setFrequency(float freq);
-    
+
     bool recharge();
     void pulse();
 

@@ -7,53 +7,66 @@
 #include "Vehicle.h"
 #include <iostream>
 
-Vehicle::Vehicle(const std::string& type, const std::string& model, int maxSpeed) 
-    : type_(type), model_(model), maxSpeed_(maxSpeed), isDamaged_(false) {
+Vehicle::Vehicle(const std::string& type, const std::string& model, int maxSpeed)
+    : type_(type), model_(model), maxSpeed_(maxSpeed), isDamaged_(false)
+{
 }
 
-Vehicle::~Vehicle() {
+Vehicle::~Vehicle()
+{
 }
 
-std::string Vehicle::getType() {
+std::string Vehicle::getType()
+{
     return type_;
 }
 
-std::string Vehicle::getModel() {
+std::string Vehicle::getModel()
+{
     return model_;
 }
 
-int Vehicle::getMaxSpeed() {
+int Vehicle::getMaxSpeed()
+{
     return maxSpeed_;
 }
 
-bool Vehicle::getIsDamaged() {
+bool Vehicle::getIsDamaged()
+{
     return isDamaged_;
 }
 
-void Vehicle::setType(const std::string& type) {
+void Vehicle::setType(const std::string& type)
+{
     type_ = type;
 }
 
-void Vehicle::setModel(const std::string& model) {
+void Vehicle::setModel(const std::string& model)
+{
     model_ = model;
 }
 
-void Vehicle::setMaxSpeed(int speed) {
-    if (speed >= 0) {
+void Vehicle::setMaxSpeed(int speed)
+{
+    if (speed >= 0)
+    {
         maxSpeed_ = speed;
     }
 }
 
-void Vehicle::setIsDamaged(bool damaged) {
+void Vehicle::setIsDamaged(bool damaged)
+{
     isDamaged_ = damaged;
 }
 
-void Vehicle::repair() {
+void Vehicle::repair()
+{
     isDamaged_ = false;
     std::cout << model_ << " has been repaired!" << std::endl;
 }
 
-void Vehicle::upgrade() {
+void Vehicle::upgrade()
+{
     maxSpeed_ += 10;
     std::cout << model_ << " New max speed: " << maxSpeed_ << std::endl;
 }

@@ -9,21 +9,22 @@
 
 #include <string>
 
-class Vehicle {
+class Vehicle
+{
 public:
     Vehicle(const std::string& type, const std::string& model, int maxSpeed);
     ~Vehicle();
-    
+
     std::string getType();
     std::string getModel();
     int getMaxSpeed();
     bool getIsDamaged();
-    
+
     void setType(const std::string& type);
     void setModel(const std::string& model);
     void setMaxSpeed(int speed);
     void setIsDamaged(bool damaged);
-    
+
     void repair();
     void upgrade();
 

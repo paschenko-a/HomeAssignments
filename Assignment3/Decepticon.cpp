@@ -6,41 +6,50 @@
 
 #include "Decepticon.h"
 
-Decepticon::Decepticon(const std::string& name, int age, const std::string& rank, 
-                       float size, Vehicle* vehicle, int aggressionLevel, 
+Decepticon::Decepticon(const std::string& name, int age, const std::string& rank,
+                       float size, Vehicle* vehicle, int aggressionLevel,
                        const std::string& specialAbility)
     : Transformer(name, "Red", age, rank, size, vehicle),
       aggressionLevel_(aggressionLevel),
-      specialAbility_(specialAbility) {
+      specialAbility_(specialAbility)
+{
 }
 
-Decepticon::~Decepticon() {
+Decepticon::~Decepticon()
+{
 }
 
-int Decepticon::getAggressionLevel() {
+int Decepticon::getAggressionLevel()
+{
     return aggressionLevel_;
 }
 
-std::string Decepticon::getSpecialAbility() {
+std::string Decepticon::getSpecialAbility()
+{
     return specialAbility_;
 }
 
-void Decepticon::setAggressionLevel(int level) {
+void Decepticon::setAggressionLevel(int level)
+{
     aggressionLevel_ = level;
 }
 
-void Decepticon::setSpecialAbility(const std::string& ability) {
+void Decepticon::setSpecialAbility(const std::string& ability)
+{
     specialAbility_ = ability;
 }
 
-bool Decepticon::destroy() {
+bool Decepticon::destroy()
+{
     return true;
 }
 
-bool Decepticon::deceive() {
+bool Decepticon::deceive()
+{
     return true;
 }
 
-bool Decepticon::conquer() {
+bool Decepticon::conquer()
+{
     return true;
 }

@@ -10,22 +10,23 @@
 #include "Transformer.h"
 #include <string>
 
-class Dinobot : public Transformer {
+class Dinobot : public Transformer
+{
 public:
-    Dinobot(const std::string& name, int age, const std::string& rank, 
-            float size, Vehicle* vehicle, int roarPower, 
+    Dinobot(const std::string& name, int age, const std::string& rank,
+            float size, Vehicle* vehicle, int roarPower,
             const std::string& dinoType, bool canFly);
-    
+
     ~Dinobot();
-    
+
     int getRoarPower();
     std::string getDinoType();
     bool getCanFly();
-    
+
     void setRoarPower(int power);
     void setDinoType(const std::string& type);
     void setCanFly(bool canFly);
-    
+
     bool roar();
     bool primalRage();
 

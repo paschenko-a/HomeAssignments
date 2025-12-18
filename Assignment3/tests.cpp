@@ -12,18 +12,21 @@
 #include "Decepticon.h"
 #include "Dinobot.h"
 
-TEST(CompositionTest, SparkCreation) {
+TEST(CompositionTest, SparkCreation)
+{
     Spark spark(100, true, 60.5f);
     EXPECT_EQ(spark.getEnergyLevel(), 100);
     EXPECT_TRUE(spark.getIsActive());
 }
 
-TEST(AssociationTest, VehicleCreation) {
+TEST(AssociationTest, VehicleCreation)
+{
     Vehicle vehicle("Car", "Logan", 328);
     EXPECT_EQ(vehicle.getModel(), "Logan");
 }
 
-TEST(BaseClassTest, TransformerFieldsAndMethods) {
+TEST(BaseClassTest, TransformerFieldsAndMethods)
+{
     Vehicle vehicle("Car", "Logan", 328);
     Transformer transformer("Ivan", "Green", 500, "Fisher", 1.0f, &vehicle);
     EXPECT_EQ(transformer.getName(), "Ivan");
@@ -37,14 +40,16 @@ TEST(BaseClassTest, TransformerFieldsAndMethods) {
     EXPECT_EQ(transformer.getName(), "Petro");
 }
 
-TEST(CompositionInTransformerTest, SparkExists) {
+TEST(CompositionInTransformerTest, SparkExists)
+{
     Vehicle vehicle("Truck", "Zil", 80);
     Transformer transformer("Muhamedjan", "Blue", 488, "Ordinary", 8.0f, &vehicle);
     Spark spark = transformer.getSpark();
     EXPECT_EQ(spark.getEnergyLevel(), 100);
 }
 
-TEST(AssociationInTransformerTest, VehiclePointer) {
+TEST(AssociationInTransformerTest, VehiclePointer)
+{
     Vehicle vehicle("Car", "Lamborghini", 300);
     Transformer transformer("Vitaliy", "Blue", 21, "Arbitrageur", 2.0f, &vehicle);
     Vehicle newVehicle("Car", "Granta_sport", 380);
@@ -52,7 +57,8 @@ TEST(AssociationInTransformerTest, VehiclePointer) {
     EXPECT_EQ(transformer.getVehicle()->getModel(), "Granta_sport");
 }
 
-TEST(InheritanceTest, AutobotCreation) {
+TEST(InheritanceTest, AutobotCreation)
+{
     Vehicle vehicle("Truck", "Peterbilt", 120);
     Autobot autobot("Optimus", 1000, "Leader", 10.5f, &vehicle, 95, "Prime");
     EXPECT_EQ(autobot.getName(), "Optimus");
@@ -61,7 +67,8 @@ TEST(InheritanceTest, AutobotCreation) {
     EXPECT_TRUE(autobot.protect());
 }
 
-TEST(InheritanceTest, DecepticonCreation) {
+TEST(InheritanceTest, DecepticonCreation)
+{
     Vehicle vehicle("Jet", "Kukuruznik", 2400);
     Decepticon decepticon("Megatron", 1500, "Leader", 11.0f, &vehicle, 99, "Cannon");
     EXPECT_EQ(decepticon.getName(), "Megatron");
@@ -69,7 +76,8 @@ TEST(InheritanceTest, DecepticonCreation) {
     EXPECT_TRUE(decepticon.destroy());
 }
 
-TEST(InheritanceTest, DinobotCreation) {
+TEST(InheritanceTest, DinobotCreation)
+{
     Vehicle vehicle("Dinosaur", "T-Rex", 40);
     Dinobot dinobot("Grimlock", 800, "Boss", 9.5f, &vehicle, 90, "T-Rex", false);
     EXPECT_EQ(dinobot.getName(), "Grimlock");
@@ -77,12 +85,16 @@ TEST(InheritanceTest, DinobotCreation) {
     EXPECT_TRUE(dinobot.roar());
 }
 
-TEST(LifecycleTest, ConstructorDestructor) {
+TEST(LifecycleTest, ConstructorDestructor)
+{
     Vehicle vehicle("Car", "audi", 100);
-    {Transformer transformer("Volodya", "Blue", 777, "Test", 1.87f, &vehicle);}
+    {
+        Transformer transformer("Volodya", "Blue", 777, "Test", 1.87f, &vehicle);
+    }
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
