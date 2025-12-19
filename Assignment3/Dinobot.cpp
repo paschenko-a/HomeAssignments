@@ -1,7 +1,7 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #include "Dinobot.h"
@@ -16,21 +16,29 @@ Dinobot::Dinobot(const std::string& name, int age, const std::string& rank,
 {
 }
 
+Dinobot::Dinobot()
+    : Transformer(),
+      roarPower_(70),
+      dinoType_("T-Rex"),
+      canFly_(false)
+{
+}
+
 Dinobot::~Dinobot()
 {
 }
 
-int Dinobot::getRoarPower()
+int Dinobot::getRoarPower() const
 {
     return roarPower_;
 }
 
-std::string Dinobot::getDinoType()
+std::string Dinobot::getDinoType() const
 {
     return dinoType_;
 }
 
-bool Dinobot::getCanFly()
+bool Dinobot::getCanFly() const
 {
     return canFly_;
 }
@@ -58,4 +66,27 @@ bool Dinobot::roar()
 bool Dinobot::primalRage()
 {
     return true;
+}
+
+void Dinobot::battleCry()
+{
+    std::cout << "Dinobot::battleCry()" << std::endl;
+}
+
+bool Dinobot::defend()
+{
+    std::cout << "Dinobot::defend()" << std::endl;
+    return true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Dinobot& d)
+{
+    // Выводим базовую информацию из Transformer
+    os << static_cast<const Transformer&>(d);
+    
+    // Добавляем специфичную информацию Dinobot
+    os << ", DinoType: " << d.dinoType_ 
+       << ", RoarPower: " << d.roarPower_
+       << ", CanFly: " << (d.canFly_ ? "Yes" : "No");
+    return os;
 }

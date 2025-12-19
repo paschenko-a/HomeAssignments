@@ -1,7 +1,7 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #include "Autobot.h"
@@ -16,16 +16,23 @@ Autobot::Autobot(const std::string& name, int age, const std::string& rank,
 {
 }
 
+Autobot::Autobot()
+    : Transformer(),
+      courageLevel_(50),
+      faction_("Autobot")
+{
+}
+
 Autobot::~Autobot()
 {
 }
 
-int Autobot::getCourageLevel()
+int Autobot::getCourageLevel() const
 {
     return courageLevel_;
 }
 
-std::string Autobot::getFaction()
+std::string Autobot::getFaction() const
 {
     return faction_;
 }
@@ -58,4 +65,24 @@ bool Autobot::peaceOffer()
 bool Autobot::introduce()
 {
     return true;
+}
+
+void Autobot::battleCry()
+{
+    std::cout << "Autobot::battleCry()" << std::endl;
+}
+
+bool Autobot::defend()
+{
+    std::cout << "Autobot::defend()" << std::endl;
+    return true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Autobot& a)
+{
+    os << static_cast<const Transformer&>(a);
+    
+    os << ", Faction: " << a.faction_ 
+       << ", Courage: " << a.courageLevel_;
+    return os;
 }

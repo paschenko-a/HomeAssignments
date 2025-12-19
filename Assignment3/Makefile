@@ -1,6 +1,6 @@
 PROJECT = transformers
 CXX = g++
-CXXFLAGS = -Wall -Wextra -pthread 
+CXXFLAGS = -Wall -Wextra -Wpedantic -Werror -pthread
 GTEST_LIBS = -lgtest -lgtest_main -pthread 
 SRC = Spark.cpp Vehicle.cpp Transformer.cpp Autobot.cpp Decepticon.cpp Dinobot.cpp tests.cpp
 OBJ = $(SRC:.cpp=.o)

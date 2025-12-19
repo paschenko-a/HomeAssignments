@@ -1,7 +1,7 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #include "Vehicle.h"
@@ -12,26 +12,31 @@ Vehicle::Vehicle(const std::string& type, const std::string& model, int maxSpeed
 {
 }
 
+Vehicle::Vehicle()
+    : type_("Car"), model_("Default"), maxSpeed_(100), isDamaged_(false)
+{
+}
+
 Vehicle::~Vehicle()
 {
 }
 
-std::string Vehicle::getType()
+std::string Vehicle::getType() const
 {
     return type_;
 }
 
-std::string Vehicle::getModel()
+std::string Vehicle::getModel() const
 {
     return model_;
 }
 
-int Vehicle::getMaxSpeed()
+int Vehicle::getMaxSpeed() const
 {
     return maxSpeed_;
 }
 
-bool Vehicle::getIsDamaged()
+bool Vehicle::getIsDamaged() const
 {
     return isDamaged_;
 }
