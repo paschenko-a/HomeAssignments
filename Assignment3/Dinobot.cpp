@@ -83,9 +83,9 @@ std::ostream& operator<<(std::ostream& os, const Dinobot& d)
 {
     // Выводим базовую информацию из Transformer
     os << static_cast<const Transformer&>(d);
-    
+
     // Добавляем специфичную информацию Dinobot
-    os << ", DinoType: " << d.dinoType_ 
+    os << ", DinoType: " << d.dinoType_
        << ", RoarPower: " << d.roarPower_
        << ", CanFly: " << (d.canFly_ ? "Yes" : "No");
     return os;

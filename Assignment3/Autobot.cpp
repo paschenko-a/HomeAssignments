@@ -81,8 +81,8 @@ bool Autobot::defend()
 std::ostream& operator<<(std::ostream& os, const Autobot& a)
 {
     os << static_cast<const Transformer&>(a);
-    
-    os << ", Faction: " << a.faction_ 
+
+    os << ", Faction: " << a.faction_
        << ", Courage: " << a.courageLevel_;
     return os;
 }

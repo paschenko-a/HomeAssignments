@@ -75,8 +75,8 @@ bool Decepticon::defend()
 std::ostream& operator<<(std::ostream& os, const Decepticon& d)
 {
     os << static_cast<const Transformer&>(d);
-    
-    os << ", Ability: " << d.specialAbility_ 
+
+    os << ", Ability: " << d.specialAbility_
        << ", Aggression: " << d.aggressionLevel_;
     return os;
 }

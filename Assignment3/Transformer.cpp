@@ -135,9 +135,9 @@ std::ostream& operator<<(std::ostream& os, const Transformer& t)
     {
         vehicleModel = t.vehicle_->getModel();
     }
-    
-    os << "Transformer '" << t.name_ << "' (" << t.rank_ 
-       << "), Age: " << t.age_ 
+
+    os << "Transformer '" << t.name_ << "' (" << t.rank_
+       << "), Age: " << t.age_
        << ", Spark: " << t.spark_.getEnergyLevel() << "%"
        << ", Vehicle: " << vehicleModel;
     return os;
