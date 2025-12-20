@@ -1,7 +1,7 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number five
 */
 
 #ifndef MATRIX_H
