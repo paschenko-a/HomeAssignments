@@ -1,11 +1,10 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #include "Transformer.h"
-#include <iostream>
 
 Transformer::Transformer(const std::string& name, const std::string& eyeColor,
                          int age, const std::string& rank, float size, Vehicle* vehicle)
@@ -19,31 +18,42 @@ Transformer::Transformer(const std::string& name, const std::string& eyeColor,
 {
 }
 
+Transformer::Transformer()
+    : name_("Unknown"),
+      eyeColor_("Blue"),
+      age_(0),
+      rank_("Recruit"),
+      size_(1.0f),
+      spark_(100, true, 60.5f),
+      vehicle_(nullptr)
+{
+}
+
 Transformer::~Transformer()
 {
 }
 
-std::string Transformer::getName()
+std::string Transformer::getName() const
 {
     return name_;
 }
 
-std::string Transformer::getEyeColor()
+std::string Transformer::getEyeColor() const
 {
     return eyeColor_;
 }
 
-int Transformer::getAge()
+int Transformer::getAge() const
 {
     return age_;
 }
 
-std::string Transformer::getRank()
+std::string Transformer::getRank() const
 {
     return rank_;
 }
 
-float Transformer::getSize()
+float Transformer::getSize() const
 {
     return size_;
 }
@@ -110,4 +120,25 @@ bool Transformer::transform()
 bool Transformer::introduce()
 {
     return true;
+}
+
+bool Transformer::defend()
+{
+    std::cout << "Transformer::defend()" << std::endl;
+    return true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Transformer& t)
+{
+    std::string vehicleModel = "None";
+    if (t.vehicle_ != nullptr)
+    {
+        vehicleModel = t.vehicle_->getModel();
+    }
+
+    os << "Transformer '" << t.name_ << "' (" << t.rank_
+       << "), Age: " << t.age_
+       << ", Spark: " << t.spark_.getEnergyLevel() << "%"
+       << ", Vehicle: " << vehicleModel;
+    return os;
 }

@@ -1,7 +1,7 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #ifndef VEHICLE_H
@@ -13,12 +13,13 @@ class Vehicle
 {
 public:
     Vehicle(const std::string& type, const std::string& model, int maxSpeed);
+    Vehicle();
     ~Vehicle();
 
-    std::string getType();
-    std::string getModel();
-    int getMaxSpeed();
-    bool getIsDamaged();
+    std::string getType() const;
+    std::string getModel() const;
+    int getMaxSpeed() const;
+    bool getIsDamaged() const;
 
     void setType(const std::string& type);
     void setModel(const std::string& model);
