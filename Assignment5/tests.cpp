@@ -1,3 +1,9 @@
+/*
+* Pashchenko Alexey
+* st141278@student.spbu.ru
+* My project number three
+*/
+
 #include <gtest/gtest.h>
 #include "Matrix.h"
 #include "Rational.h"
