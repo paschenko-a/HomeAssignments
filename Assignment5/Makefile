@@ -1,19 +1,28 @@
 PROJECT = matrix
 CXX = g++
-CXXFLAGS = -Wall -Wextra -pthread 
-GTEST_LIBS = -lgtest -lgtest_main -pthread 
-SRC = Rational.cpp tests.cpp
-OBJ = $(SRC:.cpp=.o)
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -pthread
+GTEST_LIBS = -lgtest -lgtest_main -pthread
 
-.PHONY: all clean cleanall
+LIB_SRC = Rational.cpp
+LIB_OBJ = $(LIB_SRC:.cpp=.o)
+TEST_SRC = test_Matrix.cpp test_Rational.cpp tests.cpp
+TEST_OBJ = $(TEST_SRC:.cpp=.o)
+
+.PHONY: all clean cleanall test
 
 all: $(PROJECT)
 
-$(PROJECT): $(OBJ)
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(GTEST_LIBS) 
+$(PROJECT): $(LIB_OBJ) $(TEST_OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(GTEST_LIBS)
 
 %.o: %.cpp
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+test: $(PROJECT)
+	./$(PROJECT)
 
 clean:
-	rm -f $(OBJ) $(PROJECT)
+	rm -f *.o
+
+cleanall: clean
+	rm -f $(PROJECT)
