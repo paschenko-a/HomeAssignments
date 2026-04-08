@@ -1,13 +1,14 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #ifndef TRANSFORMER_H
 #define TRANSFORMER_H
 
 #include <string>
+#include <iostream>
 #include "Spark.h"
 #include "Vehicle.h"
 
@@ -16,13 +17,14 @@ class Transformer
 public:
     Transformer(const std::string& name, const std::string& eyeColor,
                 int age, const std::string& rank, float size, Vehicle* vehicle);
+    Transformer();
     ~Transformer();
 
-    std::string getName();
-    std::string getEyeColor();
-    int getAge();
-    std::string getRank();
-    float getSize();
+    std::string getName() const;
+    std::string getEyeColor() const;
+    int getAge() const;
+    std::string getRank() const;
+    float getSize() const;
 
     void setName(const std::string& name);
     void setEyeColor(const std::string& eyeColor);
@@ -39,6 +41,11 @@ public:
     bool attack();
     bool transform();
     bool introduce();
+
+    virtual bool defend();
+    virtual void battleCry() = 0;
+
+    friend std::ostream& operator<<(std::ostream& os, const Transformer& t);
 
 private:
     std::string name_;

@@ -1,33 +1,40 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #include "Spark.h"
 
 Spark::Spark(int energyLevel, bool isActive, float frequency)
+    : energyLevel_(energyLevel),
+      isActive_(isActive),
+      frequency_(frequency)
 {
-    energyLevel_ = energyLevel;
-    isActive_ = isActive;
-    frequency_ = frequency;
+}
+
+Spark::Spark()
+    : energyLevel_(100),
+      isActive_(true),
+      frequency_(60.5f)
+{
 }
 
 Spark::~Spark()
 {
 }
 
-int Spark::getEnergyLevel()
+int Spark::getEnergyLevel() const
 {
     return energyLevel_;
 }
 
-bool Spark::getIsActive()
+bool Spark::getIsActive() const
 {
     return isActive_;
 }
 
-float Spark::getFrequency()
+float Spark::getFrequency() const
 {
     return frequency_;
 }

@@ -1,7 +1,7 @@
 /*
 * Pashchenko Alexey
 * st141278@student.spbu.ru
-* My project number three
+* My project number four
 */
 
 #ifndef SPARK_H
@@ -11,11 +11,12 @@ class Spark
 {
 public:
     Spark(int energyLevel, bool isActive, float frequency);
+    Spark();
     ~Spark();
 
-    int getEnergyLevel();
-    bool getIsActive();
-    float getFrequency();
+    int getEnergyLevel() const;
+    bool getIsActive() const;
+    float getFrequency() const;
 
     void setEnergyLevel(int level);
     void setIsActive(bool active);
